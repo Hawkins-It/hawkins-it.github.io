@@ -97,6 +97,20 @@ h3 {
  min-width: 300px;
 }
 
+.p15 {
+ width: 15%;
+}
+
+.p85 {
+ width: 85%;
+}
+
+.vc {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
 p {
  border: 0;
  font-size: 16px;
