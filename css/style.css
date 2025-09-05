@@ -181,6 +181,61 @@ th {
  background: #360;
 }
 
+form {
+ background-color: #222;
+ border-radius: 30px;
+ margin: 0 auto;
+ padding: 30px;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ width: 400px;
+}
+
+img {
+ padding-bottom: 30px;
+ width: 100%;
+}
+
+input {
+ background-color: #333;
+ border-radius: 10px;
+ border: 1px solid #333;
+ color: #fff;
+ font-size: 16px;
+ font-weight: 600;
+ height: 40px;
+ margin-bottom: 10px;
+ padding: 10px;
+ text-align: center;
+ width: 100%;
+}
+
+button {
+ background-color: #18f;
+ border-radius: 10px;
+ border: 1px solid #18f;
+ color: #fff;
+ cursor: pointer;
+ font-size: 16px;
+ font-weight: 600;
+ height: 40px;
+ padding: 10px;
+ width: 100%;
+}
+
+button:hover {
+ background-color: #06d;
+ border: 1px solid #06d;
+}
+
+@media (max-width: 400px) {
+ form {
+  width: 90%;
+ }
+}
+
 @media (max-aspect-ratio: 2/3) {
  header {
   padding-left: 0;
