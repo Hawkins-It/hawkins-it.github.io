@@ -197,6 +197,7 @@ th {
 
 form {
  background-color: #222;
+ opacity: 0.5;
  border-radius: 30px;
  margin: 0 auto;
  padding: 30px;
