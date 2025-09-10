@@ -52,8 +52,8 @@
         }
 
         img {
-            padding-bottom: 30px;
-            width: 10%;
+            margin: 20px 0 0 12%;
+            height: 50px;
         }
 
         p {
@@ -64,7 +64,7 @@
         }
 
         a {
-            font-size: 18px;
+            font-size: 16px;
             vertical-align: bottom;
             color: #fff;
             text-decoration: none;
@@ -135,8 +135,13 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            margin-top: 20px;
+            margin-top: 20px; /* space from inputs */
+            margin-bottom: 0; /* align visually before button */
             clear: both;
+        }
+
+        .remember-row a {
+            margin-left: auto;
         }
 
         button {
@@ -197,6 +202,12 @@
         }
 
         @media (max-aspect-ratio: 2/3) {
+            img {
+                display: absolute;
+                margin: 20px 0 0 0;
+                left: 50%;
+            }
+
             div {
                 width: 100%;
             }
@@ -206,7 +217,8 @@
             }
 
             .remember-row {
-                margin-top: 32px;
+                margin-top: 24px;
+                margin-bottom: 0;
             }
 
             /* Reduce top spacing for the primary submit button on mobile */
@@ -226,11 +238,11 @@
         <input type="text" name="email" id="email" placeholder="info@hawkings.com">
         <p>Password</p>
         <input type="password" name="password" id="password" placeholder="********">
-        <a href="forgot-password.html" style="float: right; margin-top: 5px;">Password dimenticata?</a>
         <div class="remember-row">
-            <input type="checkbox" name="remember" id="remember"><label for="remember">Ricordami su questo dispositivo</label>
+            <input type="checkbox" name="remember" id="remember"><label for="remember">Ricordami</label>
+            <a href="forgot-password.html" style="display: flex;">Password dimenticata?</a>
         </div>
-        <button type="submit" style="margin-top: 30px;">Entra</button>
+        <button type="submit" style="margin-top: 20px;">Entra</button>
         <div class="divider">o</div>
         <button type="button" style="margin-top: 10px;"><svg height="24px" viewBox="0 0 48 48">
                 <path fill="#FFC107"
