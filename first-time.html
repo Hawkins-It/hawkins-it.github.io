@@ -12,15 +12,24 @@
 </head>
 <body>
  <form method="post">
-  <img src="images/L.png">
-  <p>
-   Prima di continuare...
-  </p>
-  <input type="text" placeholder="Nome" name="name" id="name">
-  <input type="text" placeholder="Cognome" name="cognome" id="cognome">
-  <input type="text" placeholder="Nomero di Telefono" name="phone" id="phone">
-  <input type="text" placeholder="Sede Legale" name="sede" id="sede">
-  <button type="submit">Salva</button>
+  <img src="images/logo.png">
+  <h1>Completa il tuo profilo</h1>
+  <h2>Prima di continuare...</h2>
+  <div class="form-row">
+   <div class="form-col">
+    <p>Nome</p>
+    <input type="text" name="name" id="name" placeholder="Michele">
+   </div>
+   <div class="form-col">
+    <p>Cognome</p>
+    <input type="text" name="cognome" id="cognome" placeholder="Rossi">
+   </div>
+  </div>
+  <p>Ragione Sociale</p>
+  <input type="text" name="ragione_sociale" id="ragione_sociale" placeholder="Hawkings S.r.l.">
+  <p>Numero di Telefono</p>
+  <input type="text" name="phone" id="phone" placeholder="329 667 4118">
+  <button type="submit" style="margin-top: 20px;">Avanti</button>
  </form>
 </body>
 </html>

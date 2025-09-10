@@ -58,6 +58,10 @@
             text-decoration: none;
         }
 
+        p a {
+            font-size: inherit;
+        }
+
         input[type="text"],
         input[type="password"] {
             background-color: #000;
@@ -155,6 +159,20 @@
             margin-left: auto;
         }
 
+        .form-row {
+            display: flex;
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .form-row p {
+            margin-top: 0;
+        }
+
+        .form-row .form-col {
+            width: 50%;
+        }
+
         button {
             background-color: #eee;
             border-radius: 6px;
@@ -212,6 +230,30 @@
             text-align: center;
         }
 
+        .code-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 16px 0;
+        }
+
+        .code-row input.code-digit[type="text"] {
+            width: 40px;
+            text-align: center;
+            font-size: 24px;
+            height: 52px;
+            border: 0;
+            border-bottom: 1px solid #888;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .code-row .code-sep {
+            color: #888;
+            padding: 0 4px;
+        }
+
         @media (max-aspect-ratio: 2/3) {
             div {
                 width: 100%;
@@ -229,5 +271,14 @@
             /* Reduce top spacing for the primary submit button on mobile */
             form button[type="submit"] {
                 margin-top: 24px !important;
+            }
+
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .form-row .form-col {
+                width: 100%;
             }
         }
