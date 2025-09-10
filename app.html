@@ -11,23 +11,74 @@
  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
- <section class="f" style="height: 100%;">
-  <div class="p15" style="background-color: #333;">
-   <a href=#>Chat 1</a><br>
-   <a href=#>Chat 2</a><br>
-   <a href=#>Chat 3</a><br>
-   <a href=#>Chat 4</a><br>
-   <a href=#>Chat 5</a><br>
-   <a href=#>Chat 6</a><br>
-   <a href=#>Chat 7</a><br>
-   <a href=#>Chat 8</a><br>
-   <a href=#>Chat 9</a><br>
-   <a href=#>Chat 10</a><br>
-   <a href=#>Chat 11</a><br>
-  </div>
-  <div class="p85 vc" style="background-color: #222; padding: 0 200px;">
-   <input type="search" placeholder="Scrivi">
-  </div>
- </section>
-</body>
+ <div class="app-layout">
+  <aside class="sidebar">
+   <div class="sidebar-header">
+    <img src="images/logo.png" alt="Hawkins AI" class="sidebar-logo">
+    <span>Hawkins AI</span>
+   </div>
+   <button class="new-chat" id="newChatBtn">+ Nuova chat</button>
+   <ul class="chat-list" id="chatList">
+    <li class="chat-item active">Chat iniziale</li>
+   </ul>
+  </aside>
+  <main class="chat-pane">
+   <div class="chat-header">Chat</div>
+   <div class="chat-messages" id="messages">
+    <div class="message ai">Ciao! Come posso aiutarti oggi?</div>
+   </div>
+   <form class="chat-input" id="chatForm">
+    <input type="text" id="chatText" placeholder="Scrivi un messaggio..." autocomplete="off">
+    <button type="submit">Invia</button>
+   </form>
+  </main>
+ </div>
+ <script>
+ (function(){
+  var form = document.getElementById('chatForm');
+  var input = document.getElementById('chatText');
+  var messages = document.getElementById('messages');
+  var list = document.getElementById('chatList');
+  var newBtn = document.getElementById('newChatBtn');
+
+  function appendMessage(text, role){
+   var el = document.createElement('div');
+   el.className = 'message ' + (role || 'user');
+   el.textContent = text;
+   messages.appendChild(el);
+   messages.scrollTop = messages.scrollHeight;
+  }
+
+  form.addEventListener('submit', function(e){
+   e.preventDefault();
+   var text = (input.value || '').trim();
+   if(!text) return;
+   appendMessage(text, 'user');
+   input.value = '';
+   // Placeholder AI response. Replace with real fetch to your API.
+   var thinking = document.createElement('div');
+   thinking.className = 'message ai';
+   thinking.textContent = '...';
+   messages.appendChild(thinking);
+   messages.scrollTop = messages.scrollHeight;
+   setTimeout(function(){
+    thinking.textContent = 'Risposta AI di esempio: ' + text;
+    messages.scrollTop = messages.scrollHeight;
+   }, 600);
+  });
+
+  newBtn.addEventListener('click', function(){
+   // Simple new chat: clear messages and add a new list item
+   messages.innerHTML = '<div class="message ai">Ciao! Nuova chat avviata.</div>';
+   var item = document.createElement('li');
+   item.className = 'chat-item';
+   item.textContent = 'Chat ' + (list.children.length + 1);
+   list.appendChild(item);
+   Array.prototype.forEach.call(list.children, function(li){ li.classList.remove('active'); });
+   item.classList.add('active');
+   input.focus();
+  });
+ })();
+ </script>
+ </body>
 </html>
