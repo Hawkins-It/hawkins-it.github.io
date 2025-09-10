@@ -38,15 +38,16 @@
         h1 {
             text-align: center;
             margin: 0;
-            font-size: 30px;
+            font-size: 36px;
             font-weight: 600;
         }
 
         h2 {
+            color: #888;
             text-align: center;
-            font-size: 26px;
+            font-size: 24px;
             font-weight: 400;
-            margin: 16px 0 30px 0;
+            margin: 16px 0 50px 0;
         }
 
         img {
@@ -55,10 +56,10 @@
         }
 
         p {
-            font-size: 24px;
+            font-size: 20px;
             margin: 0;
             text-align: left;
-            margin: 30px 0;
+            margin: 24px 0 16px 0;
         }
 
         a {
@@ -72,27 +73,36 @@
         input {
             background-color: #000;
             border: 0;
-            border-bottom: 1px solid #555;
-            font-size: 26px;
+            border-bottom: 1px solid #888;
+            font-size: 22px;
             height: 52px;
             width: 100%;
+            color: #888;
         }
 
         button {
-            background-color: #321832;
-            border-radius: 10px;
+            background-color: #eee;
+            border-radius: 6px;
             border: 0;
-            color: #fff;
+            color: #000;
             cursor: pointer;
-            font-size: 16px;
-            font-weight: 600;
-            height: 40px;
+            font-size: 18px;
+            font-weight: 400;
+            height: 60px;
             padding: 10px;
             width: 100%;
+            display: block;
+            margin: 10px 0;
+            clear: both;
         }
 
         button:hover {
             opacity: 0.7;
+        }
+
+        span {
+            align-items: right;
+            text-align: center;
         }
 
         @media (max-aspect-ratio: 2/3) {
@@ -117,6 +127,9 @@
         <p>Password</p>
         <input type="password" name="password" id="password" placeholder="********">
         <a href="forgot-password.html">Password dimenticata?</a>
+        <button type="submit" style="margin-top: 60px;">Entra</button>
+        <button type="submit" style="margin-top: 60px;">Accedi con Google</button>
+        <button type="submit">Entra</button>
         <button type="submit">Entra</button>
         <p><span>Non hai un account? <a href="sign-in.html"><b>Registrati.</b></a></span></p>
     </form>
